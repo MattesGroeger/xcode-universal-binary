@@ -1,13 +1,22 @@
+# Validate arguments
+
+if [ -z "$1" -o -z "$2" ]; then
+  echo "\n** ERROR **\n"
+  echo "You have to define 'target' and 'libName' as argument"
+  echo "Example: 'universal_binary.sh MyTarget lib.a'"
+  exit 1
+fi
+
 TARGET=$1 # The name of the Xcode target
 FILE_NAME=$2 # It has to match the library that is defined in the Xcode target
-
-echo "Building universal library for target '${TARGET}'\n\n"
 
 ACTION="clean build" 
 DEVICE=iphoneos
 SIMULATOR=iphonesimulator
 
 # Build for all platforms
+
+echo "Building universal library for target '${TARGET}'\n\n"
 
 xcodebuild -configuration Release -target ${TARGET} -sdk ${DEVICE} ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO
 xcodebuild -configuration Release -target ${TARGET} -sdk ${SIMULATOR} ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO
