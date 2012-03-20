@@ -1,5 +1,7 @@
-GET=$1 # e.g. 'Library'
+TARGET=$1 # e.g. 'Library'
 FILE_NAME=$2 # e.g. 'lib.a'
+
+echo "Building universal library for target '${TARGET}'\n\n"
 
 ACTION="clean build" 
 DEVICE=iphoneos
