@@ -1,5 +1,5 @@
-TARGET=$1 # e.g. 'Library'
-FILE_NAME=$2 # e.g. 'lib.a'
+TARGET=$1 # The name of the Xcode target
+FILE_NAME=$2 # It has to match the library that is defined in the Xcode target
 
 echo "Building universal library for target '${TARGET}'\n\n"
 
@@ -27,6 +27,6 @@ lipo -create -output "${RELEASE_UNIVERSAL_DIR}/${FILE_NAME}" "${RELEASE_DEVICE_D
 # Output results
 
 echo "\nWrote universal lib to:"
-echo "`pwd`/${RELEASE_UNIVERSAL_DIR}/${FILE_NAME}"
+echo "`pwd`/${RELEASE_UNIVERSAL_DIR}"
 
 echo "\n\n** DONE **"
