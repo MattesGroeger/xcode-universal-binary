@@ -1,3 +1,5 @@
+[![endorse](http://api.coderwall.com/mattesgroeger/endorsecount.png)](http://coderwall.com/mattesgroeger)
+
 What it does
 ------------
 
